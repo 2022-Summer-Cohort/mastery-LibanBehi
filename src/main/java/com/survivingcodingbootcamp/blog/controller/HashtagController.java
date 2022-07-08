@@ -41,7 +41,7 @@ public class HashtagController {
     }
 
     @PostMapping("/post/{id}/addHashtag")
-    public String addHashtagToPost(@PathVariable Long id, @RequestParam String hashtag) {
+    public String addHashtagToPost(@PathVariable long id, @RequestParam String hashtag) {
         Post post = postRepo.findById(id).get();
         Optional<Hashtag> hashtagOptional =  hashtagRepo.findByNameIgnoreCase(hashtag);
         if (hashtagOptional.isPresent()) {

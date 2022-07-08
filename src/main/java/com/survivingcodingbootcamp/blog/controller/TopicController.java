@@ -30,7 +30,7 @@ public class TopicController {
     @PostMapping("/{id}/addPost")
     public String addPost(Model model, @PathVariable long id, @RequestParam String title, @RequestParam String author, @RequestParam String content) {
        Topic topic1 = topicRepo.findById(id).get();
-       Post post = new Post (author,topic1,author,content);
+       Post post = new Post (title,topic1,author,content);
        postRepo.save(post);
        return "redirect:/topics/" + id;
     }
