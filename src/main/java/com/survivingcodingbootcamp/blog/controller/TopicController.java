@@ -32,6 +32,8 @@ public class TopicController {
        Topic topic1 = topicRepo.findById(id).get();
        Post post = new Post (title,topic1,author,content);
        postRepo.save(post);
+       topic1.addPost(post);
+       topicRepo.save(topic1);
        return "redirect:/topics/" + id;
     }
 }

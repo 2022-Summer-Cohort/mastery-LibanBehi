@@ -39,11 +39,6 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
-                    <form th:action="'/posts/' + ${post.id}+ '/addAuthor'" method="post">
-                        <label for="authorID">Enter Author name:</label>
-                        <input type="text" name="author" id="authorID">
-                        <input type="submit">
-                    </form>
                 </div>
             </section>
         </main>
